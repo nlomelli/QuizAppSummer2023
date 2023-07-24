@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">QuizAppSummer2023</string>
+    <style name="Base.Theme.QuizAppSummer2023" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.QuizAppSummer2023" parent="Base.Theme.QuizAppSummer2023"/>
+</resources>
