@@ -2846,6 +2846,8 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scoreBTN
+id scoreTV
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3063,6 +3065,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_score
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

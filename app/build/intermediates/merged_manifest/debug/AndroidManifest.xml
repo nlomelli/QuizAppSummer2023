@@ -28,6 +28,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.QuizAppSummer2023" >
         <activity
+            android:name="com.example.quizappsummer2023.ScoreActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.quizappsummer2023.MainActivity"
             android:exported="true" >
             <intent-filter>
