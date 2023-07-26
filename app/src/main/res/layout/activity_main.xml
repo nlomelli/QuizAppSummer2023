@@ -8,8 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/questionTV"
-        android:text="Pi is equal to 3.?"
-        android:textSize="40dp"
+        android:text="@string/q1Text"
+        android:textSize="30sp"
         android:textColor="@color/design_default_color_primary"
         />
     <LinearLayout
@@ -17,30 +17,48 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/design_default_color_secondary"
-            android:text="TRUE"
-            android:textSize="25dp"
-            android:id="@+id/trueBTN"
-            />
+        >
+    <Button
+        android:id="@+id/trueBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="TRUE"
+        android:textSize="20dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="FALSE"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:id="@+id/falseBTN"
         />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:text="Hint"
+            android:textSize="20dp"
+            android:id="@+id/hintBTN"
+            />
+
+    </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Score"
+        android:text="NEXT"
         android:textSize="25dp"
-        android:id="@+id/scoreBTN"
+        android:id="@+id/nextBTN"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:text="New Question"
+        android:textSize="25dp"
+        android:id="@+id/newBTN"
         />
 
 </LinearLayout>

@@ -2,7 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="alreadyAns">Already answered, go to next question.</string>
     <string name="app_name">QuizAppSummer2023</string>
+    <string name="q1Hint">Most important part of Pi is the decimal part</string>
+    <string name="q1Text">Pi is equal to 3.?</string>
+    <string name="q2Hint">You can assume 4 decimals is enough</string>
+    <string name="q2Text">Pi is equal to 3.1415</string>
+    <string name="q3Hint">You have to love coding to be on this training</string>
+    <string name="q3Text">You like coding</string>
+    <string name="q4Hint">You are using android now</string>
+    <string name="q4Text">Is android better than IOS</string>
+    <string name="q5Hint">Java is the most popular programming language to learn but not the best one</string>
+    <string name="q5Text">Is it Java the best programming language</string>
+    <string name="rightMsg">You are correct! good job</string>
+    <string name="wrongMsg">You are wrong!</string>
     <style name="Base.Theme.QuizAppSummer2023" parent="Theme.Material3.DayNight.NoActionBar">
         
         

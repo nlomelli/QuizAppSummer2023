@@ -2700,12 +2700,14 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id greeting
 id group_divider
 id grouping
 id groups
 id guideline
 id header_title
 id hideable
+id hintBTN
 id home
 id homeAsUp
 id honorRequest
@@ -2801,6 +2803,8 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newBTN
+id nextBTN
 id noScroll
 id noState
 id none
@@ -2846,7 +2850,6 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id scoreBTN
 id scoreTV
 id screen
 id scroll
@@ -2867,6 +2870,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sendBTN
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2903,6 +2907,7 @@ id staticPostLayout
 id stop
 id stretch
 id submenuarrow
+id submitQuestion
 id submit_area
 id supportScrollUp
 id tabMode
@@ -2956,6 +2961,9 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id trueBTN
+id typeAnswer
+id typeHint
+id typeQuestion
 id unchecked
 id uniform
 id unlabeled
@@ -3064,6 +3072,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_question
 layout activity_main
 layout activity_score
 layout custom_dialog
@@ -3183,6 +3192,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string alreadyAns
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3286,8 +3296,20 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string q1Hint
+string q1Text
+string q2Hint
+string q2Text
+string q3Hint
+string q3Text
+string q4Hint
+string q4Text
+string q5Hint
+string q5Text
+string rightMsg
 string search_menu_title
 string status_bar_notification_info_overflow
+string wrongMsg
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
