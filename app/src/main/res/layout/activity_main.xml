@@ -8,9 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/questionTV"
-        android:text="@string/q1Text"
+        android:text="starting..."
         android:textSize="30sp"
-        android:textColor="@color/design_default_color_primary"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="NEXT"
+        android:text="START"
         android:textSize="25dp"
         android:id="@+id/nextBTN"
         />

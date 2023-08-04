@@ -4,21 +4,45 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     TextView questionTV;
     Button trueBTN, falseBTN, nextBTN, hintBTN, newBTN;
     int score;
-    String message;
-    Question q1, q2, q3, q4, q5, currentQ;
-    Question[] questions;
-    int currentIndex;
-    boolean ansFlag;
+    String message, dataRecord, qKey;
+    Question currentQ;
+    ArrayList<Question> questionList;
 
+
+    int currentIndex;
+    public int numQ, maxQ;
+    boolean ansFlag, addNewQ;
+
+    // Teacher style
+    //FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //DatabaseReference myRef = database.getReference("testApp");
+
+    // Google examples
+    //private DatabaseReference databaseReference;
+    //private DatabaseReference myQuestionRef;
+    //private Query myQuestionQuery;
+
+    //private DataSnapshot myDataSnapshot;
+
+    QueryActivity myQuery;
+    DatabaseReference myRef;
+
+    DatabaseReference questionRef;
+    ReadAndWriteQuestions myQuestion = new ReadAndWriteQuestions(myRef);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +58,50 @@ public class MainActivity extends AppCompatActivity {
         score = 0;
         ansFlag = false;
         message = "";
-        q1 = new Question(getString(R.string.q1Text), getString(R.string.q1Hint), false);
-        q2 = new Question(getString(R.string.q2Text), getString(R.string.q2Hint), true);
-        q3 = new Question(getString(R.string.q3Text),getString(R.string.q3Hint), true);
-        q4 = new Question(getString(R.string.q4Text), getString(R.string.q4Hint),true);
-        q5 = new Question(getString(R.string.q5Text), getString(R.string.q5Hint), false);
-        currentIndex = 0;
-        currentQ = q1;
-        questions = new Question[] {q1, q2, q3, q4, q5};
+        questionList = new ArrayList<>();
+        Log.d("Main", "inicializa questionList");
+
+        currentIndex = -1;
+        currentQ = new Question("Click <start> for a new test", "Click <start> button", false);
+
+        Log.d("Main", "agrega primera pregunta");
+
+
+        /* NLOMELLI MESSAGE
+        On next line I was trying to add a new question to firebase but I got an error.
+         */
+        //myQuestion.writeNewQuestion("5", "Do you like Java", "Java it's a great language to learn", true);
+        //myQuestion.writeNewQuestion("6", "Do you like Rust", "Rust is for martians", false);
+        //myQuestion.writeNewPost("2","nlomelli",6,6);
+        //Firebase writing a record
+        //dataRecord = q5.toString();
+        //myRef.setValue(dataRecord);
+        //qKey = myRef.push().getKey();
+        //myRef.child("questions").child(qKey).child(q2.getqPrompt()).setValue(q2);
+        //databaseReference = FirebaseDatabase.getInstance().getReference();
+        // Get a reference to Messages and attach a listener
+        //myQuestionRef = databaseReference.child("questiom");
+        //Log.d(TAG, "Number of messages: " + myDataSnapshot.getChildrenCount());
+        //q4 = child.getValue(Question.class);
+
+        myQuery = new QueryActivity();
+
+        Log.d("Main", "despues de crear myQuery");
+
+        // Reading the database for questions.
+        myQuery.basicListen(questionList);
+        Log.d("Main", "despues de crear basicListen");
+
+        //questionList.set(currentIndex, currentQ);
+        //currentQ = questionList.get(currentIndex);
+
+        questionTV.setText(currentQ.getqPrompt());
+
 
         falseBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!ansFlag) {
+                if (!ansFlag && (currentIndex >=0)) {
                     if (currentQ.getCorrectAnswer() == false) {
                         message = getString(R.string.rightMsg);
                         score++;
@@ -55,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
                         message = getString(R.string.wrongMsg);
                     }
                     ansFlag = true;
-                } else {
+                } else if (currentIndex >=0){
                     message = getString(R.string.alreadyAns);
+                } else {
+                    message = "Click <start> :(";
                 }
 
                 Toast.makeText(MainActivity.this,message, Toast.LENGTH_SHORT).show();
@@ -65,17 +122,19 @@ public class MainActivity extends AppCompatActivity {
         trueBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!ansFlag) {
+                if (!ansFlag && (currentIndex >=0)) {
                     if (currentQ.getCorrectAnswer() == true) {
                         message = getString(R.string.rightMsg);
                         score++;
 
-                    } else {
+                    } else  {
                         message = getString(R.string.wrongMsg);
                     }
                     ansFlag = true;
-                } else {
+                } else if (currentIndex >=0) {
                     message = getString(R.string.alreadyAns);
+                } else {
+                    message = "Click <start> :(";
                 }
 
                 Toast.makeText(MainActivity.this,message, Toast.LENGTH_SHORT).show();
@@ -91,20 +150,38 @@ public class MainActivity extends AppCompatActivity {
         nextBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (currentIndex == -1) {
+                    // Is going to start the test, change the botton text.
+                    nextBTN.setText("NEXT");
+                }
                 currentIndex++;
                 ansFlag = false;
-                if (currentIndex > 4) {
+                numQ = questionList.size();
+                Log.d("Main", "size del array" + numQ);
+
+                if (currentIndex >= numQ) {
                     Intent scoreIntent = new Intent(MainActivity.this, ScoreActivity.class);
                     scoreIntent.putExtra("param1", score);
                     startActivity(scoreIntent);
                     currentIndex = 0;
                     score = 0;
                 }
-                currentQ = questions[currentIndex];
+                currentQ = questionList.get(currentIndex);
                 questionTV.setText(currentQ.getqPrompt());
 
             }
         });
+        newBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent newIntent = new Intent(MainActivity.this, AddQuestion.class);
+                    newIntent.putExtra("nextIndex", questionList.size());
+                    startActivity(newIntent);
+            }
+        });
+
+        Log.d("Main", "termina on create main");
 
     }
+
 }

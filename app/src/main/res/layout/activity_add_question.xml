@@ -25,12 +25,12 @@
         android:id="@+id/typeHint"
         android:hint="Type your hint here"
         />
-    <EditText
+
+    <Switch
+        android:id="@+id/answerSW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/typeAnswer"
-        android:hint="Type the answer here"
-        />
+        android:text="Correct Answer (true / false):" />
 
     <Button
         android:layout_width="wrap_content"

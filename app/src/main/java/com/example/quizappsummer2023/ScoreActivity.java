@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity {
     TextView scoreTV;
-    Button sendBTN;
+    Button sendBTN, backBTN;
     int score;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         scoreTV = (TextView) findViewById(R.id.scoreTV);
         sendBTN = (Button) findViewById(R.id.sendBTN);
+        backBTN = (Button) findViewById(R.id.backBTN);
 
         Intent incomingIntent = getIntent();
         score = incomingIntent.getIntExtra("param1", -10);
@@ -30,6 +31,14 @@ public class ScoreActivity extends AppCompatActivity {
                 String subject = "New score on my Android test app.";
                 String body = "I just got a score of "+score+" in my Android test app";
                 composeEmail(subject, body);
+            }
+        });
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(ScoreActivity.this, MainActivity.class);
+                startActivity(mainIntent);
+
             }
         });
     }

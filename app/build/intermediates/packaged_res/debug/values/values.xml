@@ -4,16 +4,23 @@
     <color name="white">#FFFFFFFF</color>
     <string name="alreadyAns">Already answered, go to next question.</string>
     <string name="app_name">QuizAppSummer2023</string>
+    <string name="default_web_client_id" translatable="false">192195078743-i2vrvjbopqqq5cg0tlgnujhnnq5gjacg.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">192195078743</string>
+    <string name="google_api_key" translatable="false">AIzaSyBwQ9oK1-RUBnR6es9ru8bKAkgBhGRW_f4</string>
+    <string name="google_app_id" translatable="false">1:192195078743:android:9834f1a0602fbb6b729112</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBwQ9oK1-RUBnR6es9ru8bKAkgBhGRW_f4</string>
+    <string name="google_storage_bucket" translatable="false">my-mobile-project-f0ce6.appspot.com</string>
+    <string name="project_id" translatable="false">my-mobile-project-f0ce6</string>
     <string name="q1Hint">Most important part of Pi is the decimal part</string>
     <string name="q1Text">Pi is equal to 3.?</string>
     <string name="q2Hint">You can assume 4 decimals is enough</string>
-    <string name="q2Text">Pi is equal to 3.1415</string>
+    <string name="q2Text">Pi is equal to 3.1415?</string>
     <string name="q3Hint">You have to love coding to be on this training</string>
-    <string name="q3Text">You like coding</string>
+    <string name="q3Text">Do you like coding?</string>
     <string name="q4Hint">You are using android now</string>
-    <string name="q4Text">Is android better than IOS</string>
+    <string name="q4Text">Is android better than IOS?</string>
     <string name="q5Hint">Java is the most popular programming language to learn but not the best one</string>
-    <string name="q5Text">Is it Java the best programming language</string>
+    <string name="q5Text">Is it Java the best programming language?</string>
     <string name="rightMsg">You are correct! good job</string>
     <string name="wrongMsg">You are wrong!</string>
     <style name="Base.Theme.QuizAppSummer2023" parent="Theme.Material3.DayNight.NoActionBar">

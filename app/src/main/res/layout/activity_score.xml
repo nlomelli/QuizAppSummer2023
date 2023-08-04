@@ -10,7 +10,6 @@
         android:id="@+id/scoreTV"
         android:text="Score = ?"
         android:textSize="50sp"
-        android:textColor="@color/design_default_color_primary"
         />
 
     <Button
@@ -18,4 +17,10 @@
         android:layout_height="wrap_content"
         android:text="email"
         android:id="@+id/sendBTN"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/backBTN"></Button>
+
 </LinearLayout>

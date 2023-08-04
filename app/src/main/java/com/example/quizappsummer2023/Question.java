@@ -1,8 +1,8 @@
 package com.example.quizappsummer2023;
 
 public class Question {
-    private String qPrompt;
     private String qHint;
+    private String qPrompt;
     private boolean correctAnswer;
 
     public Question(String qPrompt, String qHint, boolean correctAnswer) {
@@ -10,7 +10,6 @@ public class Question {
         this.qHint = qHint;
         this.correctAnswer = correctAnswer;
     }
-
     public String getqPrompt() {
         return qPrompt;
     }

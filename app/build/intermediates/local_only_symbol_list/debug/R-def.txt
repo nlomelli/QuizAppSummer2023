@@ -4,6 +4,8 @@ color black
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id answerSW
+id backBTN
 id falseBTN
 id greeting
 id hintBTN
@@ -14,7 +16,6 @@ id scoreTV
 id sendBTN
 id submitQuestion
 id trueBTN
-id typeAnswer
 id typeHint
 id typeQuestion
 layout activity_add_question
@@ -24,6 +25,13 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 string alreadyAns
 string app_name
+string default_web_client_id
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
 string q1Hint
 string q1Text
 string q2Hint
